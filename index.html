@@ -146,11 +146,11 @@ const unit1to3 = [
     a: "\\(f\\) is continuous and \\(\\lim_{x\\to c^-} f'(x)=\\lim_{x\\to c^+} f'(x)\\)"
   },
   {
-    q: "Average rate of change on \\([a,b]\\)",
+    q: "Average rate of change of  \\(f\\) on \\([a,b]\\)",
     a: "\\(\\frac{f(b)-f(a)}{b-a}\\)"
   },
   {
-    q: "Definition of the derivative",
+    q: "Limit Definition of the derivative",
     a: "\\(f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}\\)"
   },
   {
@@ -158,40 +158,40 @@ const unit1to3 = [
     a: "If \\(f\\) is discontinuous or has a cusp, corner, or vertical tangent at \\(x=a\\)"
   },
   {
-    q: "Power Rule",
-    a: "\\(\\frac{d}{dx}(x^n)=nx^{n-1}\\)"
+    q: "Power Rule \\(\\frac{d}{dx}(x^n))",
+    a: "\\(=nx^{n-1}\\)"
   },
   {
-    q: "Derivative of \\(\\sin x\\)",
-    a: "\\(\\frac{d}{dx}(\\sin x)=\\cos x\\)"
+    q: "\\(\\frac{d}{dx}(\\sin x)=",
+    a: "\\(\\cos x\\)"
   },
   {
-    q: "Derivative of \\(\\cos x\\)",
-    a: "\\(\\frac{d}{dx}(\\cos x)=-\\sin x\\)"
+    q: "\\(\\frac{d}{dx}(\\cos x)=",
+    a: "\\(\\-sin x\\)"
   },
   {
-    q: "Derivative of \\(e^x\\)",
-    a: "\\(\\frac{d}{dx}(e^x)=e^x\\)"
+    q: "\\(\\frac{d}{dx}(\\e^x)=",
+    a: "\\(\\e^x\\)"
   },
   {
-    q: "Derivative of \\(\\ln x\\)",
-    a: "\\(\\frac{d}{dx}(\\ln x)=\\frac{1}{x}\\)"
+    q: "\\(\\frac{d}{dx}(\\ln x))=",
+    a: "\\(\\frac{1}{x}\\)"
   },
   {
-    q: "Product Rule",
-    a: "\\(\\frac{d}{dx}[f(x)g(x)]=f'(x)g(x)+f(x)g'(x)\\)"
+    q: "Product Rule \\(\\frac{d}{dx}[f(x)g(x)]=)",
+    a: "\\(f'(x)g(x)+f(x)g'(x)\\)"
   },
   {
-    q: "Quotient Rule",
-    a: "\\(\\frac{d}{dx}\\left(\\frac{f(x)}{g(x)}\\right)=\\frac{g(x)f'(x)-f(x)g'(x)}{(g(x))^2}\\)"
+    q: "Quotient Rule \\(\\frac{d}{dx}\\left(\\frac{f(x)}{g(x)}\\right)=)",
+    a: "\\(\\frac{g(x)f'(x)-f(x)g'(x)}{(g(x))^2}\\)"
   },
   {
-    q: "Chain Rule",
-    a: "\\(\\frac{d}{dx}[f(g(x))]=f'(g(x))g'(x)\\)"
+    q: "Chain Rule \\(\\frac{d}{dx}[f(g(x))]=)",
+    a: "\\(f'(g(x))g'(x)\\)"
   },
   {
-    q: "Implicit differentiation example",
-    a: "\\(\\frac{d}{dx}(y^2)=2y\\frac{dy}{dx}\\)"
+    q: "Implicit differentiation example \\(\\frac{d}{dx}(y^2)=)",
+    a: "\\(2y\\frac{dy}{dx}\\)"
   }
 ];
 
@@ -202,11 +202,11 @@ const unit4 = [
     a: "Units of \\(f\\) divided by units of \\(t\\)"
   },
   {
-    q: "Velocity",
+    q: "Velocity in terms of position",
     a: "\\(v(t)=x'(t)\\)"
   },
   {
-    q: "Acceleration",
+    q: "Acceleration in terms of velocity",
     a: "\\(a(t)=v'(t)=x''(t)\\)"
   },
   {
@@ -226,7 +226,7 @@ const unit4 = [
     a: "\\(v(t)\\) changes sign"
   },
   {
-    q: "Equation of the tangent line at \\(x=a\\)",
+    q: "Equation of the tangent line to \\(f(x)) at \\(x=a\\)",
     a: "\\(y-f(a)=f'(a)(x-a)\\)"
   },
   {
@@ -238,8 +238,8 @@ const unit4 = [
     a: "If \\(f\\) is concave up"
   },
   {
-    q: "L’Hospital’s Rule (\\(0/0\\) form)",
-    a: "If \\(\\lim_{x\\to c} f(x)=0\\) and \\(\\lim_{x\\to c} g(x)=0\\), then \\(\\lim_{x\\to c}\\frac{f(x)}{g(x)}=\\lim_{x\\to c}\\frac{f'(x)}{g'(x)}\\)"
+    q: "L’Hospital’s Rule: If \\(\\lim_{x\\to c} f(x)=0\\) and \\(\\lim_{x\\to c} g(x)=0\\) then",
+    a: "\\(\\lim_{x\\to c}\\frac{f(x)}{g(x)}=\\lim_{x\\to c}\\frac{f'(x)}{g'(x)}\\)"
   }
 ];
 
@@ -250,11 +250,11 @@ const unit5 = [
     a: "\\(f'(x)=0\\) or \\(f'(x)\\) is undefined"
   },
   {
-    q: "When does a function have a horizontal tangent?",
+    q: "When does a function \\(f(x)\\ have a horizontal tangent?",
     a: "\\(\\frac{dy}{dx}=0\\)"
   },
   {
-    q: "When does a function have a vertical tangent?",
+    q: "When does a function \\(f(x)\\ have a vertical tangent?",
     a: "\\(\\frac{dy}{dx}\\) is undefined"
   },
   {
@@ -314,40 +314,40 @@ const unit6 = [
     a: "Overestimate if \\(f\\) is concave up; underestimate if \\(f\\) is concave down"
   },
   {
-    q: "Fundamental Theorem of Calculus (Part 1)",
-    a: "\\(\\frac{d}{dx}\\left[\\int_a^x f(t)\\,dt\\right]=f(x)\\)"
+    q: "Fundamental Theorem of Calculus (Part 1)": \\(\\frac{d}{dx}\\left[\\int_a^x f(t)\\,dt\\right]=",
+    a: "\\(f(x)\\)"
   },
   {
     q: "If \\(g(x)=\\int_a^x f(t)\\,dt\\), find \\(g'(x)\\) and \\(g''(x)\\)",
     a: "\\(g'(x)=f(x)\\) and \\(g''(x)=f'(x)\\)"
   },
   {
-    q: "Fundamental Theorem of Calculus (Part 2)",
-    a: "\\(\\int_a^b f'(x)\\,dx=f(b)-f(a)\\)"
+    q: "Fundamental Theorem of Calculus (Part 2): \\(\\int_a^b f'(x)\\,dx=",
+    a: "f(b)-f(a)\\)"
   },
   {
     q: "Initial Value Problem (FTC form)",
     a: "\\(f(b)=f(a)+\\int_a^b f'(x)\\,dx\\)"
   },
   {
-    q: "Power Rule for integrals",
-    a: "\\(\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C\\)"
+    q: "Power Rule for integrals: \\(\\int x^n\\,dx=)",
+    a: "\\(\\frac{x^{n+1}}{n+1}+C\\)"
   },
   {
-    q: "Integral of \\(\\frac{1}{x}\\)",
-    a: "\\(\\int \\frac{1}{x}\\,dx=\\ln|x|+C\\)"
+    q: "\\(\\int \\frac{1}{x}\\,dx=)",
+    a: "\\(\\ln|x|+C\\)"
   },
   {
-    q: "Integral of \\(e^x\\)",
-    a: "\\(\\int e^x\\,dx=e^x+C\\)"
+    q: "\\(\\int e^x\\,dx=)",
+    a: "\\(e^x+C\\)"
   },
   {
-    q: "Integral of \\(\\cos x\\)",
-    a: "\\(\\int \\cos x\\,dx=\\sin x+C\\)"
+    q: "\\(\\int \\cos x\\,dx=",
+    a: "\\(\\sin x+C\\)"
   },
   {
-    q: "Integral of \\(\\sin x\\)",
-    a: "\\(\\int \\sin x\\,dx=-\\cos x+C\\)"
+    q: "\\(\\int \\sin x\\,dx=)",
+    a: "(-\\cos x+C\\)"
   }
 ];
 
