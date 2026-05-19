@@ -351,221 +351,677 @@ body.board-mode .card .label { font-size: 1rem; }
 
 <script>
 const decks = {
-  unit0: {
-    label: "Unit 0 – Prerequisite Knowledge",
-    cls: "unit0",
-    cards: [
-      { q: "What are the coordinate meanings on the unit circle?", a: "\\(\\cos\\theta=x\\), \\(\\sin\\theta=y\\), and \\(\\tan\\theta=\\frac{y}{x}\\)." },
-      { q: "What are the reciprocal trig functions on the unit circle?", a: "\\(\\sec\\theta=\\frac1x\\), \\(\\csc\\theta=\\frac1y\\), and \\(\\cot\\theta=\\frac{x}{y}\\)." },
-      { q: "State the Pythagorean identity.", a: "\\(\\sin^2\\theta+\\cos^2\\theta=1\\)." },
-      { q: "What is \\(\\tan\\theta\\) in terms of sine and cosine?", a: "\\(\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}\\)." },
-      { q: "Key trig values at \\(0\\).", a: "\\(\\sin 0=0\\), \\(\\cos 0=1\\), \\(\\tan 0=0\\)." },
-      { q: "Key trig values at \\(\\frac{\\pi}{2}\\).", a: "\\(\\sin\\frac{\\pi}{2}=1\\), \\(\\cos\\frac{\\pi}{2}=0\\), \\(\\tan\\frac{\\pi}{2}\\) is undefined." },
-      { q: "Key trig values at \\(\\pi\\).", a: "\\(\\sin\\pi=0\\), \\(\\cos\\pi=-1\\), \\(\\tan\\pi=0\\)." },
-      { q: "Key trig values at \\(\\frac{3\\pi}{2}\\).", a: "\\(\\sin\\frac{3\\pi}{2}=-1\\), \\(\\cos\\frac{3\\pi}{2}=0\\), \\(\\tan\\frac{3\\pi}{2}\\) is undefined." },
-      { q: "When does \\(\\sin x=\\cos x\\) on \\(0\\le x<2\\pi\\)?", a: "\\(x=\\frac{\\pi}{4}\\) and \\(x=\\frac{5\\pi}{4}\\)." },
-      { q: "Evaluate \\(e^0, e^1, \\ln(1), \\ln(e)\\).", a: "\\(e^0=1\\), \\(e^1=e\\), \\(\\ln(1)=0\\), and \\(\\ln(e)=1\\)." },
-      { q: "Evaluate \\(4^{3/2}\\) and \\(8^{2/3}\\).", a: "\\(4^{3/2}=8\\) and \\(8^{2/3}=4\\)." },
-      { q: "How many solutions does \\(a^x=0\\) have?", a: "No solutions." },
-      { q: "Give the three horizontal asymptote degree cases for rational functions.", a: "Top heavy: no HA. Bottom heavy: \\(y=0\\). Same degree: \\(y=\\frac{\\text{LC}_N}{\\text{LC}_D}\\)." },
-      { q: "How do you tell vertical asymptote vs hole from a rational expression?", a: "Denominator zero gives a possible issue. If the factor cancels, it is a hole. If it does not cancel, it is a vertical asymptote." },
-      { q: "Factor using difference of squares: \\(x^2-c^2\\).", a: "\\(x^2-c^2=(x+c)(x-c)\\)." },
-      { q: "Factor using GCF: \\(x^2+bx\\).", a: "\\(x^2+bx=x(x+b)\\)." },
-      { q: "What is slope between two points?", a: "\\(m=\\frac{y_2-y_1}{x_2-x_1}\\)." },
-      { q: "What is average rate of change?", a: "\\(\\text{AROC}=\\frac{f(b)-f(a)}{b-a}\\)." },
-      { q: "Name the common line forms.", a: "Slope-intercept: \\(y=mx+b\\). Point-slope: \\(y-y_1=m(x-x_1)\\). Horizontal: \\(y=c\\). Vertical: \\(x=c\\)." },
-      { q: "What are the basic area formulas?", a: "Triangle: \\(A=\\frac12bh\\). Rectangle: \\(A=bh\\). Trapezoid: \\(A=\\frac12(b_1+b_2)h\\). Circle: \\(A=\\pi r^2\\)." },
-      { q: "What are the basic volume formulas?", a: "Cylinder: \\(V=\\pi r^2h\\). Cone: \\(V=\\frac13\\pi r^2h\\). Sphere: \\(V=\\frac43\\pi r^3\\). Cube: \\(V=s^3\\)." },
-      { q: "State the log rules.", a: "\\(\\ln(xy)=\\ln x+\\ln y\\), \\(\\ln\\frac{x}{y}=\\ln x-\\ln y\\), and \\(\\ln(x^n)=n\\ln x\\)." },
-      { q: "State the exponent rules.", a: "\\(a^ma^n=a^{m+n}\\), \\(\\frac{a^m}{a^n}=a^{m-n}\\), \\(a^{-n}=\\frac1{a^n}\\), \\(a^{1/n}=\\sqrt[n]{a}\\), \\((a^m)^n=a^{mn}\\)." },
-      { q: "What do increasing/decreasing and concavity mean graphically?", a: "Increasing rises left to right; decreasing falls left to right. Concave up is a smile; concave down is a frown." },
-      { q: "What is a point of inflection?", a: "A point where concavity changes." },
-      { q: "What are even and odd function tests?", a: "Even: \\(f(-x)=f(x)\\). Odd: \\(f(-x)=-f(x)\\)." },
-      { q: "What is true for inverse functions?", a: "If \\(f\\) and \\(g\\) are inverses, then \\(f(g(x))=x\\) and \\(g(f(x))=x\\)." }
+  "unit0": {
+    "label": "Unit 0 – Prerequisite Knowledge",
+    "cls": "unit0",
+    "cards": [
+      {
+        "q": "For the unit circle, what are the coordinates/ratio for \\(\\sin\\theta\\), \\(\\cos\\theta\\), and \\(\\tan\\theta\\)?",
+        "a": "\\(\\sin\\theta=y\\), \\(\\cos\\theta=x\\), and \\(\\tan\\theta=\\frac{y}{x}\\)."
+      },
+      {
+        "q": "What are the reciprocal trig functions on the unit circle?",
+        "a": "\\(\\sec\\theta=\\frac1x\\), \\(\\csc\\theta=\\frac1y\\), and \\(\\cot\\theta=\\frac{x}{y}\\)."
+      },
+      {
+        "q": "State the Pythagorean identity.",
+        "a": "\\(\\sin^2\\theta+\\cos^2\\theta=1\\)."
+      },
+      {
+        "q": "What is \\(\\tan\\theta\\) in terms of sine and cosine?",
+        "a": "\\(\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}\\)."
+      },
+      {
+        "q": "Key trig values at \\(0\\).",
+        "a": "\\(\\sin 0=0\\), \\(\\cos 0=1\\), \\(\\tan 0=0\\)."
+      },
+      {
+        "q": "Key trig values at \\(\\frac{\\pi}{2}\\).",
+        "a": "\\(\\sin\\frac{\\pi}{2}=1\\), \\(\\cos\\frac{\\pi}{2}=0\\), and \\(\\tan\\frac{\\pi}{2}\\) is undefined."
+      },
+      {
+        "q": "Key trig values at \\(\\pi\\).",
+        "a": "\\(\\sin\\pi=0\\), \\(\\cos\\pi=-1\\), and \\(\\tan\\pi=0\\)."
+      },
+      {
+        "q": "Key trig values at \\(\\frac{3\\pi}{2}\\).",
+        "a": "\\(\\sin\\frac{3\\pi}{2}=-1\\), \\(\\cos\\frac{3\\pi}{2}=0\\), and \\(\\tan\\frac{3\\pi}{2}\\) is undefined."
+      },
+      {
+        "q": "When does \\(\\sin x=\\cos x\\) on \\(0\\le x<2\\pi\\)?",
+        "a": "\\(x=\\frac{\\pi}{4}\\) and \\(x=\\frac{5\\pi}{4}\\)."
+      },
+      {
+        "q": "Evaluate \\(e^0, e^1, \\ln(1), \\ln(e)\\).",
+        "a": "\\(e^0=1\\), \\(e^1=e\\), \\(\\ln(1)=0\\), and \\(\\ln(e)=1\\)."
+      },
+      {
+        "q": "Evaluate \\(4^{3/2}\\) and \\(8^{2/3}\\).",
+        "a": "\\(4^{3/2}=8\\) and \\(8^{2/3}=4\\)."
+      },
+      {
+        "q": "How many solutions does \\(a^x=0\\) have?",
+        "a": "No solutions."
+      },
+      {
+        "q": "Give the three horizontal asymptote degree cases for rational functions.",
+        "a": "Top heavy: no HA. Bottom heavy: \\(y=0\\). Same degree: \\(y=\\frac{\\text{LC}_N}{\\text{LC}_D}\\)."
+      },
+      {
+        "q": "How do you tell vertical asymptote vs hole from a rational expression?",
+        "a": "Denominator zero gives a possible issue. If the factor cancels, it is a hole. If it does not cancel, it is a vertical asymptote."
+      },
+      {
+        "q": "Factor using difference of squares: \\(x^2-c^2\\).",
+        "a": "\\(x^2-c^2=(x+c)(x-c)\\)."
+      },
+      {
+        "q": "Factor using GCF: \\(x^2+bx\\).",
+        "a": "\\(x^2+bx=x(x+b)\\)."
+      },
+      {
+        "q": "What is slope between two points, and how is it the same as AROC?",
+        "a": "\\(m=\\frac{y_2-y_1}{x_2-x_1}\\). For a function \\(f\\), \\(\\text{AROC}=\\frac{f(b)-f(a)}{b-a}\\). These are the same idea."
+      },
+      {
+        "q": "What is average rate of change, and how is it the same as slope?",
+        "a": "\\(\\text{AROC}=\\frac{f(b)-f(a)}{b-a}\\). This is the slope formula \\(m=\\frac{y_2-y_1}{x_2-x_1}\\) applied to \\(f\\)."
+      },
+      {
+        "q": "Slope-intercept form of a line",
+        "a": "\\(y=mx+b\\)."
+      },
+      {
+        "q": "Point-slope form of a line",
+        "a": "\\(y-y_1=m(x-x_1)\\)."
+      },
+      {
+        "q": "Horizontal line equation",
+        "a": "\\(y=c\\)."
+      },
+      {
+        "q": "Vertical line equation",
+        "a": "\\(x=c\\)."
+      },
+      {
+        "q": "What are the basic area formulas?",
+        "a": "Triangle: \\(A=\\frac12bh\\). Rectangle: \\(A=bh\\). Trapezoid: \\(A=\\frac12(b_1+b_2)h\\). Circle: \\(A=\\pi r^2\\)."
+      },
+      {
+        "q": "What are the basic volume formulas?",
+        "a": "Cylinder: \\(V=\\pi r^2h\\). Cone: \\(V=\\frac13\\pi r^2h\\). Sphere: \\(V=\\frac43\\pi r^3\\). Cube: \\(V=s^3\\)."
+      },
+      {
+        "q": "State the log rules.",
+        "a": "\\(\\ln(xy)=\\ln x+\\ln y\\), \\(\\ln\\frac{x}{y}=\\ln x-\\ln y\\), and \\(\\ln(x^n)=n\\ln x\\)."
+      },
+      {
+        "q": "State any 3 of the 6 exponent rules.",
+        "a": "\\(a^ma^n=a^{m+n}\\), \\(\\frac{a^m}{a^n}=a^{m-n}\\), \\(a^{-n}=\\frac1{a^n}\\), \\(a^{1/n}=\\sqrt[n]{a}\\), \\((a^m)^n=a^{mn}\\), and \\(a^0=1\\)."
+      },
+      {
+        "q": "For a function \\(f\\), what do increasing, decreasing, concave up, and concave down mean graphically? (4 answers)",
+        "a": "Increasing rises left to right. Decreasing falls left to right. Concave up is a smile. Concave down is a frown."
+      },
+      {
+        "q": "What is a point of inflection for \\(f\\)?",
+        "a": "A point where the concavity of \\(f\\) changes."
+      },
+      {
+        "q": "What are even and odd function tests for \\(f\\)?",
+        "a": "Even: \\(f(-x)=f(x)\\). Odd: \\(f(-x)=-f(x)\\)."
+      },
+      {
+        "q": "What is true for inverse functions?",
+        "a": "If \\(f\\) and \\(g\\) are inverses, then \\(f(g(x))=x\\) and \\(g(f(x))=x\\)."
+      }
     ]
   },
-  unit1: {
-    label: "Unit 1 – Limits & Continuity",
-    cls: "unit1",
-    cards: [
-      { q: "When does \\(\\dlim_{x\\to c}f(x)\\) exist?", a: "When \\(\\dlim_{x\\to c^-}f(x)=\\dlim_{x\\to c^+}f(x)=L\\)." },
-      { q: "What are the three conditions for continuity at \\(x=c\\)?", a: "1. \\(f(c)\\) exists. 2. \\(\\dlim_{x\\to c}f(x)\\) exists. 3. \\(\\dlim_{x\\to c}f(x)=f(c)\\)." },
-      { q: "What is a removable discontinuity?", a: "A hole: \\(\\dlim_{x\\to c}f(x)\\) exists, but \\(f(c)\\) does not exist or does not equal the limit." },
-      { q: "What is a non-removable discontinuity?", a: "A jump or vertical asymptote: one-sided limits disagree, one/both limits DNE, or one/both are \\(\\pm\\infty\\)." },
-      { q: "What does a vertical asymptote at \\(x=c\\) mean as a limit?", a: "\\(\\dlim_{x\\to c}f(x)=\\pm\\infty\\) from at least one side." },
-      { q: "What does a horizontal asymptote \\(y=L\\) mean as a limit?", a: "\\(\\dlim_{x\\to\\pm\\infty}f(x)=L\\)." },
-      { q: "State the Intermediate Value Theorem.", a: "If \\(f\\) is continuous on \\([a,b]\\) and \\(N\\) is between \\(f(a)\\) and \\(f(b)\\), then there is some \\(c\\in(a,b)\\) such that \\(f(c)=N\\)." },
-      { q: "State the Squeeze Theorem.", a: "If \\(g(x)\\le f(x)\\le h(x)\\) and \\(\\dlim_{x\\to c}g(x)=\\dlim_{x\\to c}h(x)=L\\), then \\(\\dlim_{x\\to c}f(x)=L\\)." },
-      { q: "What is the growth-rate order to know?", a: "\\(\\log x < x^n < a^x < x! < x^x\\)." }
+  "unit1": {
+    "label": "Unit 1 – Limits & Continuity",
+    "cls": "unit1",
+    "cards": [
+      {
+        "q": "When does \\(\\dlim_{x\\to c}f(x)\\) exist?",
+        "a": "When \\(\\dlim_{x\\to c^-}f(x)=\\dlim_{x\\to c^+}f(x)=L\\)."
+      },
+      {
+        "q": "What are the three conditions for \\(f\\) to be continuous at \\(x=c\\)?",
+        "a": "1. \\(f(c)\\) exists. 2. \\(\\dlim_{x\\to c}f(x)\\) exists. 3. \\(\\dlim_{x\\to c}f(x)=f(c)\\)."
+      },
+      {
+        "q": "What is a removable discontinuity of \\(f\\)?",
+        "a": "A hole: \\(\\dlim_{x\\to c}f(x)\\) exists, but \\(f(c)\\) does not exist or does not equal the limit."
+      },
+      {
+        "q": "What is a non-removable discontinuity of \\(f\\)?",
+        "a": "A jump or vertical asymptote: one-sided limits disagree, one/both limits DNE, or one/both are \\(\\pm\\infty\\)."
+      },
+      {
+        "q": "What does a vertical asymptote at \\(x=c\\) mean as a limit?",
+        "a": "\\(\\dlim_{x\\to c}f(x)=\\pm\\infty\\) from at least one side."
+      },
+      {
+        "q": "What does a horizontal asymptote \\(y=L\\) mean as a limit?",
+        "a": "\\(\\dlim_{x\\to\\pm\\infty}f(x)=L\\)."
+      },
+      {
+        "q": "State the Intermediate Value Theorem for \\(f\\).",
+        "a": "If \\(f\\) is continuous on \\([a,b]\\) and \\(N\\) is between \\(f(a)\\) and \\(f(b)\\), then there is some \\(c\\in(a,b)\\) such that \\(f(c)=N\\)."
+      },
+      {
+        "q": "State the Squeeze Theorem for \\(f\\).",
+        "a": "If \\(g(x)\\le f(x)\\le h(x)\\) and \\(\\dlim_{x\\to c}g(x)=\\dlim_{x\\to c}h(x)=L\\), then \\(\\dlim_{x\\to c}f(x)=L\\)."
+      },
+      {
+        "q": "Order these by growth rate from slowest to fastest: \\(\\log x\\), \\(x^n\\), \\(a^x\\), \\(x!\\), \\(x^x\\).",
+        "a": "\\(\\log x < x^n < a^x < x! < x^x\\)."
+      }
     ]
   },
-  unit2: {
-    label: "Unit 2 – Derivative Definition & Rules",
-    cls: "unit2",
-    cards: [
-      { q: "State the limit definition of derivative.", a: "\\(f'(x)=\\dlim_{h\\to0}\\frac{f(x+h)-f(x)}{h}\\)." },
-      { q: "State the alternate definition of derivative at \\(x=c\\).", a: "\\(f'(c)=\\dlim_{x\\to c}\\frac{f(x)-f(c)}{x-c}\\)." },
-      { q: "What does differentiability imply?", a: "If \\(f\\) is differentiable, then \\(f\\) is continuous. Continuity does not guarantee differentiability." },
-      { q: "Where is a function not differentiable?", a: "At discontinuities, cusps/corners, and vertical tangents." },
-      { q: "Power Rule", a: "\\(\\frac{d}{dx}[x^n]=nx^{n-1}\\)." },
-      { q: "Product Rule", a: "\\(\\frac{d}{dx}[fg]=f'g+fg'\\)." },
-      { q: "Quotient Rule", a: "\\(\\frac{d}{dx}\\left(\\frac{f}{g}\\right)=\\frac{gf'-fg'}{g^2}\\)." },
-      { q: "Derivative of \\(\\sin x\\), \\(\\cos x\\), and \\(\\tan x\\).", a: "\\((\\sin x)'=\\cos x\\), \\((\\cos x)'=-\\sin x\\), and \\((\\tan x)'=\\sec^2x\\)." },
-      { q: "Derivative of \\(e^x\\) and \\(\\ln x\\).", a: "\\((e^x)'=e^x\\) and \\((\\ln x)'=\\frac1x\\)." },
-      { q: "Derivative of \\(\\sec x\\) and \\(\\cot x\\).", a: "\\((\\sec x)'=\\sec x\\tan x\\) and \\((\\cot x)'=-\\csc x\\cot x\\)." },
-      { q: "Derivative of \\(\\sqrt{x}\\) and \\(\\frac1x\\).", a: "\\((\\sqrt{x})'=\\frac{1}{2\\sqrt{x}}\\) and \\(\\left(\\frac1x\\right)'=-\\frac{1}{x^2}\\)." },
-      { q: "Tangent line equation at \\(x=a\\).", a: "Use point and slope: \\(y-f(a)=f'(a)(x-a)\\)." }
+  "unit2": {
+    "label": "Unit 2 – Derivative Definition & Rules",
+    "cls": "unit2",
+    "cards": [
+      {
+        "q": "State the limit definition of \\(f'\\).",
+        "a": "\\(f'(x)=\\dlim_{h\\to0}\\frac{f(x+h)-f(x)}{h}\\)."
+      },
+      {
+        "q": "State the alternate definition of \\(f'\\) at \\(x=c\\).",
+        "a": "\\(f'(c)=\\dlim_{x\\to c}\\frac{f(x)-f(c)}{x-c}\\)."
+      },
+      {
+        "q": "What does differentiability of \\(f\\) imply?",
+        "a": "If \\(f\\) is differentiable, then \\(f\\) is continuous. Continuity does not guarantee differentiability."
+      },
+      {
+        "q": "Where is a function \\(f\\) not differentiable? (3 answers)",
+        "a": "At discontinuities, cusps/corners, and vertical tangents."
+      },
+      {
+        "q": "Power Rule",
+        "a": "\\(\\frac{d}{dx}[x^n]=nx^{n-1}\\)."
+      },
+      {
+        "q": "Product Rule",
+        "a": "\\(\\frac{d}{dx}[fg]=f'g+fg'\\)."
+      },
+      {
+        "q": "Quotient Rule",
+        "a": "\\(\\frac{d}{dx}\\left(\\frac{f}{g}\\right)=\\frac{gf'-fg'}{g^2}\\)."
+      },
+      {
+        "q": "Derivative of \\(\\sin x\\), \\(\\cos x\\), and \\(\\tan x\\).",
+        "a": "\\((\\sin x)'=\\cos x\\), \\((\\cos x)'=-\\sin x\\), and \\((\\tan x)'=\\sec^2x\\)."
+      },
+      {
+        "q": "Derivative of \\(e^x\\) and \\(\\ln x\\).",
+        "a": "\\((e^x)'=e^x\\) and \\((\\ln x)'=\\frac1x\\)."
+      },
+      {
+        "q": "Derivative of \\(\\sec x\\) and \\(\\cot x\\).",
+        "a": "\\((\\sec x)'=\\sec x\\tan x\\) and \\((\\cot x)'=-\\csc x\\cot x\\)."
+      },
+      {
+        "q": "Derivative of \\(\\sqrt{x}\\) and \\(\\frac1x\\).",
+        "a": "\\((\\sqrt{x})'=\\frac{1}{2\\sqrt{x}}\\) and \\(\\left(\\frac1x\\right)'=-\\frac{1}{x^2}\\)."
+      },
+      {
+        "q": "Tangent line to \\(f\\) at \\(x=a\\).",
+        "a": "Use point and slope: \\(y-f(a)=f'(a)(x-a)\\)."
+      }
     ]
   },
-  unit3: {
-    label: "Unit 3 – Chain, Implicit & Inverses",
-    cls: "unit3",
-    cards: [
-      { q: "Chain Rule", a: "If \\(h(x)=f(g(x))\\), then \\(h'(x)=f'(g(x))g'(x)\\)." },
-      { q: "Derivative of inverse function", a: "If \\(g=f^{-1}\\), then \\(g'(x)=\\frac{1}{f'(g(x))}\\)." },
-      { q: "Implicit differentiation: \\(\\frac{d}{dx}(y^2)\\)", a: "\\(2y\\frac{dy}{dx}\\)." },
-      { q: "Implicit differentiation: \\(\\frac{d}{dx}(xy)\\)", a: "\\(x\\frac{dy}{dx}+y\\)." },
-      { q: "Example of implicit second derivative", a: "If \\(\\frac{dy}{dx}=x^2+y^3\\), then \\(\\frac{d^2y}{dx^2}=2x+3y^2\\frac{dy}{dx}=2x+3y^2(x^2+y^3)\\)." },
-      { q: "Derivative of \\(a^x\\)", a: "\\(\\frac{d}{dx}[a^x]=a^x\\ln a\\)." },
-      { q: "Derivative of \\(\\log_a x\\)", a: "\\(\\frac{d}{dx}[\\log_a x]=\\frac{1}{x\\ln a}\\)." },
-      { q: "Derivative of \\(\\arcsin x\\)", a: "\\(\\frac{1}{\\sqrt{1-x^2}}\\)." },
-      { q: "Derivative of \\(\\arctan x\\)", a: "\\(\\frac{1}{1+x^2}\\)." }
+  "unit3": {
+    "label": "Unit 3 – Chain, Implicit & Inverses",
+    "cls": "unit3",
+    "cards": [
+      {
+        "q": "Chain Rule",
+        "a": "If \\(h(x)=f(g(x))\\), then \\(h'(x)=f'(g(x))g'(x)\\)."
+      },
+      {
+        "q": "Derivative of inverse function",
+        "a": "If \\(g=f^{-1}\\), then \\(g'(x)=\\frac{1}{f'(g(x))}\\)."
+      },
+      {
+        "q": "Implicit differentiation: \\(\\frac{d}{dx}(y^2)\\)",
+        "a": "\\(2y\\frac{dy}{dx}\\)."
+      },
+      {
+        "q": "Implicit differentiation: \\(\\frac{d}{dx}(xy)\\)",
+        "a": "\\(x\\frac{dy}{dx}+y\\)."
+      },
+      {
+        "q": "If \\(\\frac{dy}{dx}=x^2+y^3\\), find \\(\\frac{d^2y}{dx^2}\\).",
+        "a": "\\(\\frac{d^2y}{dx^2}=2x+3y^2\\frac{dy}{dx}=2x+3y^2(x^2+y^3)\\)."
+      },
+      {
+        "q": "Derivative of \\(a^x\\)",
+        "a": "\\(\\frac{d}{dx}[a^x]=a^x\\ln a\\)."
+      },
+      {
+        "q": "Derivative of \\(\\log_a x\\)",
+        "a": "\\(\\frac{d}{dx}[\\log_a x]=\\frac{1}{x\\ln a}\\)."
+      },
+      {
+        "q": "Derivative of \\(\\arcsin x\\)",
+        "a": "\\(\\frac{1}{\\sqrt{1-x^2}}\\)."
+      },
+      {
+        "q": "Derivative of \\(\\arctan x\\)",
+        "a": "\\(\\frac{1}{1+x^2}\\)."
+      }
     ]
   },
-  unit4: {
-    label: "Unit 4 – Derivative Applications",
-    cls: "unit4",
-    cards: [
-      { q: "Velocity and acceleration from position", a: "\\(v(t)=x'(t)\\) and \\(a(t)=v'(t)=x''(t)\\)." },
-      { q: "When is a particle at rest?", a: "When \\(v(t)=0\\)." },
-      { q: "What is speed?", a: "\\(|v(t)|\\)." },
-      { q: "When is speed increasing?", a: "When \\(v(t)\\) and \\(a(t)\\) have the same sign." },
-      { q: "When is speed decreasing?", a: "When \\(v(t)\\) and \\(a(t)\\) have opposite signs." },
-      { q: "Related rates setup example", a: "For \\(x^2+y^2=z^2\\): \\(2x\\frac{dx}{dt}+2y\\frac{dy}{dt}=2z\\frac{dz}{dt}\\)." },
-      { q: "Tangent-line approximation formula", a: "\\(L(x)=f(a)+f'(a)(x-a)\\)." },
-      { q: "When does a tangent-line approximation overestimate?", a: "When the function is concave down." },
-      { q: "When does a tangent-line approximation underestimate?", a: "When the function is concave up." },
-      { q: "L'Hospital's Rule for \\(0/0\\)", a: "If \\(\\dlim f(x)=0\\) and \\(\\dlim g(x)=0\\), then \\(\\dlim\\frac{f(x)}{g(x)}=\\dlim\\frac{f'(x)}{g'(x)}\\), when that limit exists." }
+  "unit4": {
+    "label": "Unit 4 – Derivative Applications",
+    "cls": "unit4",
+    "cards": [
+      {
+        "q": "Velocity and acceleration from position \\(x(t)\\)",
+        "a": "\\(v(t)=x'(t)\\) and \\(a(t)=v'(t)=x''(t)\\)."
+      },
+      {
+        "q": "When is a particle at rest?",
+        "a": "When \\(v(t)=0\\)."
+      },
+      {
+        "q": "What is speed?",
+        "a": "\\(|v(t)|\\)."
+      },
+      {
+        "q": "When is speed increasing?",
+        "a": "When \\(v(t)\\) and \\(a(t)\\) have the same sign."
+      },
+      {
+        "q": "When is speed decreasing?",
+        "a": "When \\(v(t)\\) and \\(a(t)\\) have opposite signs."
+      },
+      {
+        "q": "For related rates, take \\(\\frac{d}{dt}\\) of \\(x^2+y^2=z^2\\).",
+        "a": "\\(2x\\frac{dx}{dt}+2y\\frac{dy}{dt}=2z\\frac{dz}{dt}\\)."
+      },
+      {
+        "q": "Tangent-line approximation for \\(f\\) at \\(x=a\\)",
+        "a": "\\(L(x)=f(a)+f'(a)(x-a)\\)."
+      },
+      {
+        "q": "When does a tangent-line approximation for \\(f\\) overestimate?",
+        "a": "When \\(f\\) is concave down."
+      },
+      {
+        "q": "When does a tangent-line approximation for \\(f\\) underestimate?",
+        "a": "When \\(f\\) is concave up."
+      },
+      {
+        "q": "L'Hospital's Rule",
+        "a": "For an indeterminate quotient, \\(\\dlim\\frac{f(x)}{g(x)}=\\dlim\\frac{f'(x)}{g'(x)}\\), when the derivative limit exists."
+      }
     ]
   },
-  unit5: {
-    label: "Unit 5 – Derivative Analysis",
-    cls: "unit5",
-    cards: [
-      { q: "What are critical points?", a: "Values where \\(f'(x)=0\\) or \\(f'(x)\\) is undefined." },
-      { q: "Horizontal tangent condition", a: "\\(f'(x)=0\\), often numerator \\(=0\\)." },
-      { q: "Vertical tangent condition", a: "\\(f'(x)\\) undefined, often denominator \\(=0\\)." },
-      { q: "How do you find absolute extrema on \\([a,b]\\)?", a: "Check \\(f(a)\\), \\(f(b)\\), and all critical points in \\((a,b)\\)." },
-      { q: "Increasing/decreasing test", a: "\\(f'>0\\Rightarrow\\) increasing. \\(f'<0\\Rightarrow\\) decreasing." },
-      { q: "Relative max/min from \\(f'\\)", a: "\\(f'\\) changes \\(+\\) to \\(-\\): relative max. \\(f'\\) changes \\(-\\) to \\(+\\): relative min." },
-      { q: "Concavity test", a: "\\(f''>0\\) or \\(f'\\) increasing: concave up. \\(f''<0\\) or \\(f'\\) decreasing: concave down." },
-      { q: "Point of inflection", a: "Where \\(f''\\) changes sign, or where \\(f'\\) has a relative extremum." },
-      { q: "Second Derivative Test", a: "If \\(f'(c)=0\\) and \\(f''(c)>0\\), relative min. If \\(f''(c)<0\\), relative max." },
-      { q: "Mean Value Theorem", a: "If \\(f\\) is continuous on \\([a,b]\\) and differentiable on \\((a,b)\\), then some \\(c\\in(a,b)\\) has \\(f'(c)=\\frac{f(b)-f(a)}{b-a}\\)." },
-      { q: "Extreme Value Theorem", a: "If \\(f\\) is continuous on \\([a,b]\\), then \\(f\\) attains an absolute maximum and minimum on \\([a,b]\\)." }
+  "unit5": {
+    "label": "Unit 5 – Derivative Analysis",
+    "cls": "unit5",
+    "cards": [
+      {
+        "q": "What are critical points of \\(f\\)?",
+        "a": "Values where \\(f'(x)=0\\) or \\(f'(x)\\) is undefined."
+      },
+      {
+        "q": "Horizontal tangent condition for \\(f\\)",
+        "a": "\\(f'(x)=0\\), often numerator \\(=0\\)."
+      },
+      {
+        "q": "Vertical tangent condition for \\(f\\)",
+        "a": "\\(f'(x)\\) undefined, often denominator \\(=0\\)."
+      },
+      {
+        "q": "How do you find absolute extrema of \\(f\\) on \\([a,b]\\)?",
+        "a": "Check \\(f(a)\\), \\(f(b)\\), and all critical points in \\((a,b)\\)."
+      },
+      {
+        "q": "Increasing/decreasing test for \\(f\\)",
+        "a": "\\(f'>0\\Rightarrow\\) \\(f\\) is increasing. \\(f'<0\\Rightarrow\\) \\(f\\) is decreasing."
+      },
+      {
+        "q": "Relative max/min of \\(f\\) from \\(f'\\)",
+        "a": "\\(f'\\) changes \\(+\\) to \\(-\\): relative max. \\(f'\\) changes \\(-\\) to \\(+\\): relative min."
+      },
+      {
+        "q": "Concavity test for \\(f\\)",
+        "a": "\\(f''>0\\) or \\(f'\\) increasing: \\(f\\) is concave up. \\(f''<0\\) or \\(f'\\) decreasing: \\(f\\) is concave down."
+      },
+      {
+        "q": "Point of inflection for \\(f\\)",
+        "a": "Where \\(f''\\) changes sign, or where \\(f'\\) has a relative extremum."
+      },
+      {
+        "q": "Second Derivative Test for \\(f\\)",
+        "a": "If \\(f'(c)=0\\) and \\(f''(c)>0\\), relative min. If \\(f''(c)<0\\), relative max."
+      },
+      {
+        "q": "Mean Value Theorem for \\(f\\)",
+        "a": "If \\(f\\) is continuous on \\([a,b]\\) and differentiable on \\((a,b)\\), then some \\(c\\in(a,b)\\) has \\(f'(c)=\\frac{f(b)-f(a)}{b-a}\\)."
+      },
+      {
+        "q": "Extreme Value Theorem for \\(f\\)",
+        "a": "If \\(f\\) is continuous on \\([a,b]\\), then \\(f\\) attains an absolute maximum and minimum on \\([a,b]\\)."
+      }
     ]
   },
-  unit6: {
-    label: "Unit 6 – Integrals",
-    cls: "unit6",
-    cards: [
-      { q: "Left Riemann Sum over/under rules", a: "Left overestimates when \\(f\\) decreases and underestimates when \\(f\\) increases." },
-      { q: "Right Riemann Sum over/under rules", a: "Right overestimates when \\(f\\) increases and underestimates when \\(f\\) decreases." },
-      { q: "Trapezoid and midpoint over/under rules", a: "Trapezoid over if concave up, under if concave down. Midpoint over if concave down, under if concave up." },
-      { q: "Indefinite integral", a: "\\(\\int f(x)\\,dx=F(x)+C\\)." },
-      { q: "Integral power rule", a: "For \\(n\\ne -1\\), \\(\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C\\)." },
-      { q: "Basic antiderivatives", a: "\\(\\int\\sin x\\,dx=-\\cos x+C\\), \\(\\int\\cos x\\,dx=\\sin x+C\\), \\(\\int\\frac1x\\,dx=\\ln|x|+C\\), \\(\\int e^x\\,dx=e^x+C\\)." },
-      { q: "FTC Part 1: Evaluation", a: "\\(\\int_a^b f(x)\\,dx=F(b)-F(a)\\)." },
-      { q: "FTC Part 2: Derivative of an integral", a: "\\(\\frac{d}{dx}\\left[\\int_a^x f(t)\\,dt\\right]=f(x)\\)." },
-      { q: "FTC initial value form", a: "\\(F(b)=F(a)+\\int_a^b f(x)\\,dx\\)." },
-      { q: "U-sub example: \(\int\sin(4x)\,dx\)", a: "Let \(u=4x\). Then \(\int\sin(4x)\,dx=-\frac14\cos(4x)+C\)." },
-      { q: "Integration by Parts", a: "\(\int u\,dv=uv-\int v\,du\).", bcOnly: true },
-      { q: "LIATE order for choosing \(u\)", a: "Log, inverse trig, algebraic, trig, exponential.", bcOnly: true },
-      { q: "Partial fractions setup", a: "\(\frac{P(x)}{(x-r_1)(x-r_2)}=\frac{A}{x-r_1}+\frac{B}{x-r_2}\).", bcOnly: true },
-      { q: "Improper integral over infinite interval", a: "\(\int_a^\infty f(x)\,dx=\dlim_{b\to\infty}\int_a^b f(x)\,dx\).", bcOnly: true },
-      { q: "Improper integral with infinite discontinuity", a: "Split at the discontinuity: both pieces must converge.", bcOnly: true },
-      { q: "\(p\)-integral test", a: "\(\int_1^\infty\frac{1}{x^p}\,dx\) converges for \(p>1\) and diverges for \(p\le1\).", bcOnly: true }
+  "unit6": {
+    "label": "Unit 6 – Integrals",
+    "cls": "unit6",
+    "cards": [
+      {
+        "q": "Left Riemann Sum over/under rules for \\(f\\)",
+        "a": "Left overestimates when \\(f\\) decreases and underestimates when \\(f\\) increases."
+      },
+      {
+        "q": "Right Riemann Sum over/under rules for \\(f\\)",
+        "a": "Right overestimates when \\(f\\) increases and underestimates when \\(f\\) decreases."
+      },
+      {
+        "q": "Trapezoid and midpoint over/under rules for \\(f\\)",
+        "a": "Trapezoid over if \\(f\\) is concave up, under if concave down. Midpoint over if \\(f\\) is concave down, under if concave up."
+      },
+      {
+        "q": "Evaluate \\(\\int f(x)\\,dx\\) if \\(F'=f\\).",
+        "a": "\\(\\int f(x)\\,dx=F(x)+C\\)."
+      },
+      {
+        "q": "Evaluate \\(\\int x^n\\,dx\\), where \\(n\\ne -1\\).",
+        "a": "\\(\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C\\)."
+      },
+      {
+        "q": "Evaluate \\(\\int\\sin x\\,dx\\), \\(\\int\\cos x\\,dx\\), \\(\\int\\frac1x\\,dx\\), and \\(\\int e^x\\,dx\\).",
+        "a": "\\(\\int\\sin x\\,dx=-\\cos x+C\\), \\(\\int\\cos x\\,dx=\\sin x+C\\), \\(\\int\\frac1x\\,dx=\\ln|x|+C\\), and \\(\\int e^x\\,dx=e^x+C\\)."
+      },
+      {
+        "q": "Evaluate \\(\\int_a^b f(x)\\,dx\\) if \\(F'=f\\).",
+        "a": "\\(\\int_a^b f(x)\\,dx=F(b)-F(a)\\)."
+      },
+      {
+        "q": "Evaluate \\(\\frac{d}{dx}\\left[\\int_a^x f(t)\\,dt\\right]\\).",
+        "a": "\\(\\frac{d}{dx}\\left[\\int_a^x f(t)\\,dt\\right]=f(x)\\)."
+      },
+      {
+        "q": "Write the FTC initial value form for \\(F(b)\\) using \\(F(a)\\) and \\(\\int_a^b f(x)\\,dx\\).",
+        "a": "\\(F(b)=F(a)+\\int_a^b f(x)\\,dx\\)."
+      },
+      {
+        "q": "Use \\(u\\)-substitution to evaluate \\(\\int\\sin(4x)\\,dx\\).",
+        "a": "Let \\(u=4x\\). Then \\(\\int\\sin(4x)\\,dx=-\\frac14\\cos(4x)+C\\)."
+      },
+      {
+        "q": "Integration by Parts formula",
+        "a": "\\(\\int u\\,dv=uv-\\int v\\,du\\).",
+        "bcOnly": true
+      },
+      {
+        "q": "LIATE order for choosing \\(u\\) in integration by parts",
+        "a": "Log, inverse trig, algebraic, trig, exponential.",
+        "bcOnly": true
+      },
+      {
+        "q": "Partial fractions setup",
+        "a": "\\(\\frac{P(x)}{(x-r_1)(x-r_2)}=\\frac{A}{x-r_1}+\\frac{B}{x-r_2}\\).",
+        "bcOnly": true
+      },
+      {
+        "q": "Rewrite \\(\\int_a^\\infty f(x)\\,dx\\) as a proper integral limit.",
+        "a": "\\(\\int_a^\\infty f(x)\\,dx=\\dlim_{b\\to\\infty}\\int_a^b f(x)\\,dx\\).",
+        "bcOnly": true
+      },
+      {
+        "q": "\\(p\\)-integral test",
+        "a": "\\(\\int_1^\\infty\\frac{1}{x^p}\\,dx\\) converges for \\(p>1\\) and diverges for \\(p\\le1\\).",
+        "bcOnly": true
+      }
     ]
   },
-  unit7: {
-    label: "Unit 7 – Differential Equations",
-    cls: "unit7",
-    cards: [
-      { q: "How do you separate variables for \\(\\frac{dy}{dx}=g(x)h(y)\\)?", a: "\\(\\frac{1}{h(y)}\\,dy=g(x)\\,dx\\), then integrate both sides." },
-      { q: "After integrating a separable differential equation, what should you do?", a: "Apply the initial condition if given, then solve for \\(y\\)." },
-      { q: "Exponential differential equation model", a: "\\(\\frac{dy}{dt}=ky\\), meaning rate of change is proportional to amount present." },
-      { q: "Solution form for \(\frac{dy}{dt}=ky\)", a: "\(y=Ce^{kt}\)." },
-      { q: "Euler's Method formula", a: "\(y_{n+1}=y_n+\frac{dy}{dx}\Delta x\).", bcOnly: true },
-      { q: "Logistic differential equation", a: "\(\frac{dP}{dt}=kP\left(1-\frac{P}{L}\right)\), where \(L\) is carrying capacity.", bcOnly: true },
-      { q: "When is logistic growth fastest?", a: "At \(P=\frac{L}{2}\).", bcOnly: true }
+  "unit7": {
+    "label": "Unit 7 – Differential Equations",
+    "cls": "unit7",
+    "cards": [
+      {
+        "q": "How do you separate variables for \\(\\frac{dy}{dx}=g(x)h(y)\\)?",
+        "a": "\\(\\frac{1}{h(y)}\\,dy=g(x)\\,dx\\), then integrate both sides."
+      },
+      {
+        "q": "After integrating a separable differential equation, what should you do?",
+        "a": "Apply the initial condition if given, then solve for \\(y\\)."
+      },
+      {
+        "q": "Exponential differential equation model",
+        "a": "\\(\\frac{dy}{dt}=ky\\), meaning rate of change is proportional to amount present."
+      },
+      {
+        "q": "Solution form for \\(\\frac{dy}{dt}=ky\\)",
+        "a": "\\(y=Ce^{kt}\\)."
+      },
+      {
+        "q": "Euler's Method formula",
+        "a": "\\(y_{n+1}=y_n+\\frac{dy}{dx}\\Delta x\\).",
+        "bcOnly": true
+      },
+      {
+        "q": "Logistic differential equation",
+        "a": "\\(\\frac{dP}{dt}=kP\\left(1-\\frac{P}{L}\\right)\\), where \\(L\\) is carrying capacity.",
+        "bcOnly": true
+      },
+      {
+        "q": "When is logistic growth fastest?",
+        "a": "At \\(P=\\frac{L}{2}\\).",
+        "bcOnly": true
+      }
     ]
   },
-  unit8: {
-    label: "Unit 8 – Applications of Integration",
-    cls: "unit8",
-    cards: [
-      { q: "Average value of a function", a: "\\(f_{\\text{avg}}=\\frac{1}{b-a}\\int_a^b f(x)\\,dx\\)." },
-      { q: "Total displacement", a: "\\(\\int_a^b v(t)\\,dt\\)." },
-      { q: "Total distance traveled", a: "\\(\\int_a^b |v(t)|\\,dt\\)." },
-      { q: "Area with vertical rectangles", a: "\\(A=\\int_a^b(\\text{top}-\\text{bottom})\\,dx\\)." },
-      { q: "Area with horizontal rectangles", a: "\\(A=\\int_c^d(\\text{right}-\\text{left})\\,dy\\)." },
-      { q: "Volume by cross sections", a: "\\(V=\\int_a^b A(x)\\,dx\\), where \\(A(x)\\) is cross-sectional area." },
-      { q: "Volume by disks", a: "\\(V=\\pi\\int_a^b [R(x)]^2\\,dx\\)." },
-      { q: "Volume by washers", a: "\(V=\pi\int_a^b([R(x)]^2-[r(x)]^2)\,dx\)." },
-      { q: "Arc length", a: "\(L=\int_a^b\sqrt{1+\left(\frac{dy}{dx}\right)^2}\,dx\).", bcOnly: true }
+  "unit8": {
+    "label": "Unit 8 – Applications of Integration",
+    "cls": "unit8",
+    "cards": [
+      {
+        "q": "Average value of a function \\(f\\) on \\([a,b]\\)",
+        "a": "\\(f_{\\text{avg}}=\\frac{1}{b-a}\\int_a^b f(x)\\,dx\\)."
+      },
+      {
+        "q": "Total displacement from velocity \\(v(t)\\)",
+        "a": "\\(\\int_a^b v(t)\\,dt\\)."
+      },
+      {
+        "q": "Total distance traveled from velocity \\(v(t)\\)",
+        "a": "\\(\\int_a^b |v(t)|\\,dt\\)."
+      },
+      {
+        "q": "Area with vertical rectangles",
+        "a": "\\(A=\\int_a^b(\\text{top}-\\text{bottom})\\,dx\\)."
+      },
+      {
+        "q": "Area with horizontal rectangles",
+        "a": "\\(A=\\int_c^d(\\text{right}-\\text{left})\\,dy\\)."
+      },
+      {
+        "q": "Volume by cross sections",
+        "a": "\\(V=\\int_a^b A(x)\\,dx\\), where \\(A(x)\\) is cross-sectional area."
+      },
+      {
+        "q": "Volume by disks",
+        "a": "\\(V=\\pi\\int_a^b [R(x)]^2\\,dx\\)."
+      },
+      {
+        "q": "Volume by washers",
+        "a": "\\(V=\\pi\\int_a^b([R(x)]^2-[r(x)]^2)\\,dx\\)."
+      },
+      {
+        "q": "Arc length",
+        "a": "\\(L=\\int_a^b\\sqrt{1+\\left(\\frac{dy}{dx}\\right)^2}\\,dx\\).",
+        "bcOnly": true
+      }
     ]
   },
-  unit9: {
-    label: "Unit 9 – BC Parametric & Polar",
-    cls: "unit9",
-    bcOnly: true,
-    cards: [
-      { q: "Parametric derivative", a: "\\(\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}\\)." },
-      { q: "Parametric second derivative", a: "\\(\\frac{d^2y}{dx^2}=\\frac{\\frac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{dx/dt}\\)." },
-      { q: "Parametric/vector speed", a: "\\(\\sqrt{(dx/dt)^2+(dy/dt)^2}\\)." },
-      { q: "Parametric particle at rest", a: "Both \\(\\frac{dx}{dt}=0\\) and \\(\\frac{dy}{dt}=0\\)." },
-      { q: "Parametric total distance", a: "\\(\\int_{t_1}^{t_2}\\sqrt{(dx/dt)^2+(dy/dt)^2}\\,dt\\)." },
-      { q: "Vector position, velocity, acceleration", a: "\\(\\vec r(t)=\\langle x(t),y(t)\\rangle\\), \\(\\vec v(t)=\\langle x'(t),y'(t)\\rangle\\), \\(\\vec a(t)=\\langle x''(t),y''(t)\\rangle\\)." },
-      { q: "Polar conversions", a: "\\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\), \\(r^2=x^2+y^2\\), \\(\\tan\\theta=\\frac{y}{x}\\)." },
-      { q: "Polar derivative", a: "\\(\\frac{dy}{dx}=\\frac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}\\)." },
-      { q: "Polar horizontal/vertical tangents", a: "Horizontal: numerator \\(=0\\), denominator \\(\\ne0\\). Vertical: denominator \\(=0\\), numerator \\(\\ne0\\)." },
-      { q: "Polar area", a: "\\(A=\\frac12\\int_\\alpha^\\beta r^2\\,d\\theta\\)." },
-      { q: "Polar area between curves", a: "\\(A=\\frac12\\int_\\alpha^\\beta (R^2-r^2)\\,d\\theta\\)." },
-      { q: "Common polar graph families", a: "\\(r=a\\sin\\theta\\) or \\(a\\cos\\theta\\): circles. \\(r=a+b\\sin\\theta\\) or \\(a+b\\cos\\theta\\): limacons/cardioids. \\(r=a\\sin(n\\theta)\\) or \\(a\\cos(n\\theta)\\): rose curves." }
+  "unit9": {
+    "label": "Unit 9 – BC Parametric & Polar",
+    "cls": "unit9",
+    "bcOnly": true,
+    "cards": [
+      {
+        "q": "Parametric derivative",
+        "a": "\\(\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}\\)."
+      },
+      {
+        "q": "Parametric second derivative",
+        "a": "\\(\\frac{d^2y}{dx^2}=\\frac{\\frac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{dx/dt}\\)."
+      },
+      {
+        "q": "Parametric/vector speed",
+        "a": "\\(\\sqrt{(dx/dt)^2+(dy/dt)^2}\\)."
+      },
+      {
+        "q": "Parametric particle at rest",
+        "a": "Both \\(\\frac{dx}{dt}=0\\) and \\(\\frac{dy}{dt}=0\\)."
+      },
+      {
+        "q": "Parametric total distance",
+        "a": "\\(\\int_{t_1}^{t_2}\\sqrt{(dx/dt)^2+(dy/dt)^2}\\,dt\\)."
+      },
+      {
+        "q": "Vector position, velocity, acceleration",
+        "a": "\\(\\vec r(t)=\\langle x(t),y(t)\\rangle\\), \\(\\vec v(t)=\\langle x'(t),y'(t)\\rangle\\), \\(\\vec a(t)=\\langle x''(t),y''(t)\\rangle\\)."
+      },
+      {
+        "q": "Polar conversions for \\(x\\) and \\(y\\) coordinates",
+        "a": "\\(x=r\\cos\\theta\\) and \\(y=r\\sin\\theta\\)."
+      },
+      {
+        "q": "Polar derivative using \\(\\frac{dy}{d\\theta}\\) and \\(\\frac{dx}{d\\theta}\\)",
+        "a": "\\(\\frac{dy}{dx}=\\frac{dy/d\\theta}{dx/d\\theta}=\\frac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}\\)."
+      },
+      {
+        "q": "Polar area",
+        "a": "\\(A=\\frac12\\int_\\alpha^\\beta r^2\\,d\\theta\\)."
+      },
+      {
+        "q": "Polar area between curves",
+        "a": "\\(A=\\frac12\\int_\\alpha^\\beta (R^2-r^2)\\,d\\theta\\)."
+      }
     ]
   },
-  unit10: {
-    label: "Unit 10 – BC Series",
-    cls: "unit10",
-    bcOnly: true,
-    cards: [
-      { q: "\\(n\\)th Term Test", a: "If \\(\\lim a_n\\ne0\\), then \\(\\sum a_n\\) diverges." },
-      { q: "Geometric Series Test", a: "For \\(\\sum ar^n\\) or \\(\\sum ar^{n-1}\\): converges if \\(|r|<1\\), diverges if \\(|r|\\ge1\\), and \\(S=\\frac{a}{1-r}\\)." },
-      { q: "\\(p\\)-Series Test", a: "\\(\\sum\\frac1{n^p}\\) converges for \\(p>1\\), diverges for \\(p\\le1\\)." },
-      { q: "Integral Test", a: "If \\(a_n=f(n)\\), where \\(f\\) is positive, continuous, and decreasing, then \\(\\sum a_n\\) and \\(\\int_1^\\infty f(x)\\,dx\\) behave the same." },
-      { q: "Direct Comparison Test", a: "If \\(0\\le a_n\\le b_n\\): \\(\\sum b_n\\) convergent implies \\(\\sum a_n\\) convergent; \\(\\sum a_n\\) divergent implies \\(\\sum b_n\\) divergent." },
-      { q: "Limit Comparison Test", a: "If \\(\\lim\\frac{a_n}{b_n}=L\\) and \\(0<L<\\infty\\), then both series have the same behavior." },
-      { q: "Ratio Test", a: "\\(L=\\lim\\left|\\frac{a_{n+1}}{a_n}\\right|\\). If \\(L<1\\), converges; if \\(L>1\\), diverges." },
-      { q: "Alternating Series Test", a: "\\(\\sum (-1)^n b_n\\) converges if \\(b_n>0\\), \\(b_n\\) decreases, and \\(\\lim b_n=0\\)." },
-      { q: "Absolute vs conditional convergence", a: "If \\(\\sum |a_n|\\) converges, then \\(\\sum a_n\\) converges absolutely. If \\(\\sum a_n\\) converges but \\(\\sum |a_n|\\) diverges, it is conditional." },
-      { q: "Which test usually goes with factorials?", a: "Ratio Test." },
-      { q: "Which test usually goes with \\((-1)^n\\)?", a: "Alternating Series Test, then check absolute/conditional if needed." },
-      { q: "Taylor series centered at \\(c\\)", a: "\\(f(x)=\\sum_{n=0}^{\\infty}\\frac{f^{(n)}(c)}{n!}(x-c)^n\\)." },
-      { q: "Maclaurin series", a: "A Taylor series centered at \\(c=0\\)." },
-      { q: "Radius and interval of convergence", a: "Use Ratio Test for \\(|x-c|<R\\). Then check endpoints separately for IOC." },
-      { q: "Term-by-term differentiation", a: "\\(\\frac{d}{dx}\\sum a_n(x-c)^n=\\sum n a_n(x-c)^{n-1}\\). Radius stays same; endpoints may change." },
-      { q: "Term-by-term integration", a: "\\(\\int\\sum a_n(x-c)^n\\,dx=\\sum\\frac{a_n(x-c)^{n+1}}{n+1}+C\\). Radius stays same; endpoints may change." },
-      { q: "Alternating Series Error Bound", a: "The error after \\(n\\) terms satisfies \\(|R_n|\\le a_{n+1}\\), the first unused term." },
-      { q: "Lagrange Error Bound", a: "\\(|R_n(x)|\\le\\frac{M}{(n+1)!}|x-c|^{n+1}\\), where \\(M=\\max|f^{(n+1)}|\\)." },
-      { q: "Harmonic Series", a: "\\(\\sum_{n=1}^{\\infty}\\frac1n\\) diverges." },
-      { q: "Alternating Harmonic Series", a: "\\(\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n}\\) converges." },
-      { q: "Maclaurin series for \\(e^x\\)", a: "\\(e^x=\\sum_{n=0}^{\\infty}\\frac{x^n}{n!}=1+x+\\frac{x^2}{2!}+\\cdots\\)." },
-      { q: "Maclaurin series for \\(\\sin x\\)", a: "\\(\\sin x=\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{2n+1}}{(2n+1)!}=x-\\frac{x^3}{3!}+\\frac{x^5}{5!}-\\cdots\\)." },
-      { q: "Maclaurin series for \\(\\cos x\\)", a: "\\(\\cos x=\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{2n}}{(2n)!}=1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots\\)." },
-      { q: "Geometric power series", a: "\\(\\frac1{1-x}=\\sum_{n=0}^{\\infty}x^n\\), for \\(|x|<1\\)." },
-      { q: "Maclaurin series for \\(\\ln(1+x)\\)", a: "\\(\\ln(1+x)=\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}x^n}{n}=x-\\frac{x^2}{2}+\\frac{x^3}{3}-\\cdots\\), for \\(-1<x\\le1\\)." },
-      { q: "Maclaurin series for \\(\\arctan x\\)", a: "\\(\\arctan x=\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{2n+1}}{2n+1}=x-\\frac{x^3}{3}+\\frac{x^5}{5}-\\cdots\\), for \\(|x|\\le1\\)." },
-      { q: "How do you find the series for \\(\\sin(x^2)\\)?", a: "Substitute \\(x^2\\) into the \\(\\sin x\\) series: \\(\\sin(x^2)=x^2-\\frac{x^6}{3!}+\\frac{x^{10}}{5!}-\\cdots\\)." }
+  "unit10": {
+    "label": "Unit 10 – BC Series",
+    "cls": "unit10",
+    "bcOnly": true,
+    "cards": [
+      {
+        "q": "\\(n\\)th Term Test",
+        "a": "If \\(\\lim a_n\\ne0\\), then \\(\\sum a_n\\) diverges."
+      },
+      {
+        "q": "Geometric Series Test",
+        "a": "For \\(\\sum ar^n\\) or \\(\\sum ar^{n-1}\\): converges if \\(|r|<1\\), diverges if \\(|r|\\ge1\\), and \\(S=\\frac{a}{1-r}\\)."
+      },
+      {
+        "q": "\\(p\\)-Series Test",
+        "a": "\\(\\sum\\frac1{n^p}\\) converges for \\(p>1\\), diverges for \\(p\\le1\\)."
+      },
+      {
+        "q": "Integral Test",
+        "a": "If \\(a_n=f(n)\\), where \\(f\\) is positive, continuous, and decreasing, then \\(\\sum a_n\\) and \\(\\int_1^\\infty f(x)\\,dx\\) behave the same."
+      },
+      {
+        "q": "Direct Comparison Test",
+        "a": "If \\(0\\le a_n\\le b_n\\): \\(\\sum b_n\\) convergent implies \\(\\sum a_n\\) convergent; \\(\\sum a_n\\) divergent implies \\(\\sum b_n\\) divergent."
+      },
+      {
+        "q": "Limit Comparison Test",
+        "a": "If \\(\\lim\\frac{a_n}{b_n}=L\\) and \\(0<L<\\infty\\), then both series have the same behavior."
+      },
+      {
+        "q": "Ratio Test",
+        "a": "\\(L=\\lim\\left|\\frac{a_{n+1}}{a_n}\\right|\\). If \\(L<1\\), converges; if \\(L>1\\), diverges."
+      },
+      {
+        "q": "Alternating Series Test",
+        "a": "\\(\\sum (-1)^n b_n\\) converges if \\(b_n>0\\), \\(b_n\\) decreases, and \\(\\lim b_n=0\\)."
+      },
+      {
+        "q": "Absolute vs conditional convergence",
+        "a": "If \\(\\sum |a_n|\\) converges, then \\(\\sum a_n\\) converges absolutely. If \\(\\sum a_n\\) converges but \\(\\sum |a_n|\\) diverges, it is conditional."
+      },
+      {
+        "q": "Which test usually goes with factorials?",
+        "a": "Ratio Test."
+      },
+      {
+        "q": "Which test usually goes with \\((-1)^n\\)?",
+        "a": "Alternating Series Test, then check absolute/conditional if needed."
+      },
+      {
+        "q": "Taylor series centered at \\(c\\)",
+        "a": "\\(f(x)=\\sum_{n=0}^{\\infty}\\frac{f^{(n)}(c)}{n!}(x-c)^n\\)."
+      },
+      {
+        "q": "Maclaurin series",
+        "a": "A Taylor series centered at \\(c=0\\)."
+      },
+      {
+        "q": "Radius and interval of convergence",
+        "a": "Use Ratio Test for \\(|x-c|<R\\). Then check endpoints separately for IOC."
+      },
+      {
+        "q": "Differentiate \\(\\sum a_n(x-c)^n\\) term-by-term.",
+        "a": "\\(\\frac{d}{dx}\\sum a_n(x-c)^n=\\sum n a_n(x-c)^{n-1}\\). Radius stays same; endpoints may change."
+      },
+      {
+        "q": "Integrate \\(\\sum a_n(x-c)^n\\) term-by-term.",
+        "a": "\\(\\int\\sum a_n(x-c)^n\\,dx=\\sum\\frac{a_n(x-c)^{n+1}}{n+1}+C\\). Radius stays same; endpoints may change."
+      },
+      {
+        "q": "Alternating Series Error Bound",
+        "a": "The error after \\(n\\) terms satisfies \\(|R_n|\\le a_{n+1}\\), the first unused term."
+      },
+      {
+        "q": "Lagrange Error Bound",
+        "a": "\\(|R_n(x)|\\le\\frac{M}{(n+1)!}|x-c|^{n+1}\\), where \\(M=\\max|f^{(n+1)}|\\)."
+      },
+      {
+        "q": "Does the harmonic series converge or diverge?",
+        "a": "\\(\\sum_{n=1}^{\\infty}\\frac1n\\) diverges."
+      },
+      {
+        "q": "Does the alternating harmonic series converge or diverge?",
+        "a": "\\(\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n}\\) converges."
+      },
+      {
+        "q": "Maclaurin series for \\(e^x\\)",
+        "a": "\\(e^x=\\sum_{n=0}^{\\infty}\\frac{x^n}{n!}=1+x+\\frac{x^2}{2!}+\\cdots\\)."
+      },
+      {
+        "q": "Maclaurin series for \\(\\sin x\\)",
+        "a": "\\(\\sin x=\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{2n+1}}{(2n+1)!}=x-\\frac{x^3}{3!}+\\frac{x^5}{5!}-\\cdots\\)."
+      },
+      {
+        "q": "Maclaurin series for \\(\\cos x\\)",
+        "a": "\\(\\cos x=\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{2n}}{(2n)!}=1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots\\)."
+      },
+      {
+        "q": "Geometric power series",
+        "a": "\\(\\frac1{1-x}=\\sum_{n=0}^{\\infty}x^n\\), for \\(|x|<1\\)."
+      },
+      {
+        "q": "Maclaurin series for \\(\\ln(1+x)\\)",
+        "a": "\\(\\ln(1+x)=\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}x^n}{n}=x-\\frac{x^2}{2}+\\frac{x^3}{3}-\\cdots\\), for \\(-1<x\\le1\\)."
+      },
+      {
+        "q": "Maclaurin series for \\(\\arctan x\\)",
+        "a": "\\(\\arctan x=\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{2n+1}}{2n+1}=x-\\frac{x^3}{3}+\\frac{x^5}{5}-\\cdots\\), for \\(|x|\\le1\\)."
+      },
+      {
+        "q": "How do you find the series for \\(\\sin(x^2)\\)?",
+        "a": "Substitute \\(x^2\\) into the \\(\\sin x\\) series: \\(\\sin(x^2)=x^2-\\frac{x^6}{3!}+\\frac{x^{10}}{5!}-\\cdots\\)."
+      }
     ]
   }
 };
@@ -665,8 +1121,7 @@ function parseQuickQuizUnits() {
 function sanitizeQuickQuizInput() {
   const input = document.getElementById("quickQuizUnits");
   if (!input) return;
-  const selected = parseQuickQuizUnits();
-  if (selected.includes("unitBC") && currentMode !== "BC") input.value = "0";
+  parseQuickQuizUnits();
 }
 
 function getQuizSelections(maxQuestions = 5) {
@@ -729,27 +1184,24 @@ function renderCards(selections) {
 
 function guidedPrompt(q) {
   let hint = "";
-  if (/Key trig values at/.test(q)) hint = "Write \\(\\sin\\), \\(\\cos\\), and \\(\\tan\\).";
+  if (/Key trig values at/.test(q)) hint = "Write \(\sin\), \(\cos\), and \(\tan\).";
   else if (/reciprocal trig functions/.test(q)) hint = "Give all 3 reciprocal relationships.";
-  else if (/coordinate meanings on the unit circle/.test(q)) hint = "Give all 3: \\(\\cos\\), \\(\\sin\\), and \\(\\tan\\).";
-  else if (q.includes("Evaluate \\(e^0")) hint = "4 total answers.";
-  else if (q.includes("Evaluate \\(4^{3/2}")) hint = "2 total answers.";
+  else if (/coordinates\/ratio/.test(q)) hint = "Give \(\sin\), \(\cos\), and \(\tan\).";
+  else if (q.includes("Evaluate \(e^0")) hint = "4 total answers.";
+  else if (q.includes("Evaluate \(4^{3/2}")) hint = "2 total answers.";
   else if (/horizontal asymptote degree cases/.test(q)) hint = "Give all 3 cases.";
   else if (/basic area formulas/.test(q)) hint = "Give triangle, rectangle, trapezoid, and circle formulas.";
   else if (/basic volume formulas/.test(q)) hint = "Give cylinder, cone, sphere, and cube formulas.";
   else if (/log rules/.test(q)) hint = "Give product, quotient, and power rules.";
-  else if (/exponent rules/.test(q)) hint = "List the main exponent rules.";
+  else if (/any 3 of the 6 exponent rules/.test(q)) hint = "Any 3 correct rules earn credit.";
+  else if (/4 answers/.test(q)) hint = "Give all 4 answers.";
   else if (/What are the three conditions/.test(q)) hint = "3 total conditions.";
   else if (/State the Intermediate Value Theorem/.test(q)) hint = "Include conditions and conclusion.";
   else if (/State the Squeeze Theorem/.test(q)) hint = "Include inequality setup and conclusion.";
-  else if (/Where is a function not differentiable/.test(q)) hint = "List the common graph features.";
+  else if (/not differentiable/.test(q)) hint = "3 total answers.";
   else if (/Derivative of .* and/.test(q)) hint = "Give each derivative requested.";
-  else if (/Relative max\/min/.test(q)) hint = "State the sign changes of \\(f'\\).";
-  else if (/Approximation Rules/.test(q)) hint = "State over/under conditions.";
-  else if (/Differential equation solving steps/.test(q)) hint = "List the main steps in order.";
-  else if (/Polar horizontal\/vertical tangents/.test(q)) hint = "State numerator/denominator conditions.";
-  else if (/Common polar graph families/.test(q)) hint = "Give circle, limacon/cardioid, and rose forms.";
-  else if (/Absolute vs conditional convergence/.test(q)) hint = "Define both terms.";
+  else if (/Relative max\/min/.test(q)) hint = "State the sign changes of \(f'\).";
+  else if (/LIATE/.test(q)) hint = "This is for integration by parts.";
   else if (/Maclaurin series for/.test(q)) hint = "Write the series or first terms plus general term.";
   return hint ? `${q}<div class="question-guidance">(${hint})</div>` : q;
 }
