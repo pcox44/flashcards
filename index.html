@@ -392,19 +392,19 @@ const decks = {
         "a": "\\(\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}\\)."
       },
       {
-        "q": "Key trig values at \\(0\\).",
+        "q": "Key trig values at \\(0\\) (sine, cosine, and tangent).",
         "a": "\\(\\sin 0=0\\), \\(\\cos 0=1\\), \\(\\tan 0=0\\)."
       },
       {
-        "q": "Key trig values at \\(\\frac{\\pi}{2}\\).",
+        "q": "Key trig values at \\(\\frac{\\pi}{2}\\) (sine, cosine, and tangent).",
         "a": "\\(\\sin\\frac{\\pi}{2}=1\\), \\(\\cos\\frac{\\pi}{2}=0\\), and \\(\\tan\\frac{\\pi}{2}\\) is undefined."
       },
       {
-        "q": "Key trig values at \\(\\pi\\).",
+        "q": "Key trig values at \\(\\pi\\). (sine, cosine, and tangent)",
         "a": "\\(\\sin\\pi=0\\), \\(\\cos\\pi=-1\\), and \\(\\tan\\pi=0\\)."
       },
       {
-        "q": "Key trig values at \\(\\frac{3\\pi}{2}\\).",
+        "q": "Key trig values at \\(\\frac{3\\pi}{2}\\) (sine, cosine, and tangent).",
         "a": "\\(\\sin\\frac{3\\pi}{2}=-1\\), \\(\\cos\\frac{3\\pi}{2}=0\\), and \\(\\tan\\frac{3\\pi}{2}\\) is undefined."
       },
       {
@@ -1213,7 +1213,6 @@ function renderCards(selections) {
 function guidedPrompt(q) {
   let hint = "";
   if (/reciprocal trig functions/.test(q)) hint = "Give all 3 reciprocal relationships.";
-  else if (/coordinates\/ratio/.test(q)) hint = "Give \(\sin\), \(\cos\), and \(\tan\).";
   else if (q.includes("Evaluate \(e^0")) hint = "4 total answers.";
   else if (q.includes("Evaluate \(4^{3/2}")) hint = "2 total answers.";
   else if (/horizontal asymptote degree cases/.test(q)) hint = "Give all 3 cases.";
