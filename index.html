@@ -149,6 +149,20 @@ select, input[type="number"], input[type="text"] {
   font-weight: 700;
 }
 
+.instructions {
+  max-width: 960px;
+  margin: 4px auto 14px;
+  padding: 10px 12px;
+  border: 2px dashed #111827;
+  border-radius: 12px;
+  background: #fff7ed;
+  color: #1f2937;
+  font-size: .92rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+.instructions strong { color: #111827; }
+
 .quick-quiz input[type="text"] {
   width: 130px;
   text-align: center;
@@ -240,7 +254,7 @@ body.board-mode .card .label { font-size: 1rem; }
 .print-note { text-align:center; font-weight:900; margin: 12px auto; color:#4b5563; }
 
 @media print {
-  @page { size: letter portrait; margin: 0.15in; }
+  @page { size: letter portrait; margin: 0.25in; }
   html, body { background: white !important; margin: 0 !important; padding: 0 !important; color: black; }
 
   /* Prevent the visible home page from becoming a blank first printed page. */
@@ -252,10 +266,10 @@ body.board-mode .card .label { font-size: 1rem; }
     break-after: page;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 0.10in;
-    height: 9.66in;
-    max-height: 9.66in;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1in;
+    height: 10.5in;
+    max-height: 10.5in;
     overflow: hidden;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -263,44 +277,46 @@ body.board-mode .card .label { font-size: 1rem; }
   .print-page:last-child { page-break-after: auto !important; break-after: auto !important; }
   .mini-quiz {
     border: 1.5px solid black;
-    border-radius: 6px;
-    padding: 0.035in;
+    border-radius: 8px;
+    padding: 0.10in;
     overflow: hidden;
-    font-size: 6.15pt;
-    line-height: 0.94;
+    font-size: 9.6pt;
+    line-height: 1.16;
     break-inside: avoid;
     page-break-inside: avoid;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .mini-quiz h2 {
     margin: 0 0 0.02in 0;
     text-align: center;
-    font-size: 7.8pt;
+    font-size: 11pt;
     border-bottom: 1.2px solid black;
     padding-bottom: 0.018in;
   }
   .mini-quiz .quiz-title {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.04in;
-    align-items: baseline;
-  }
-  .mini-quiz .units-covered {
-    font-size: 6pt;
-    font-weight: 800;
-    white-space: nowrap;
+    display: block;
   }
   .mini-quiz .name-line {
     display: grid;
     grid-template-columns: 1fr 0.65fr;
     gap: 0.035in;
-    margin-bottom: 0.02in;
-    font-size: 6.05pt;
+    margin-bottom: 0.075in;
+    font-size: 8.2pt;
   }
-  .mini-quiz ol { margin: 0; padding-left: 0.12in; }
-  .mini-quiz li { margin-bottom: 0.02in; }
+  .mini-quiz ol {
+    margin: 0;
+    padding-left: 0.18in;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .mini-quiz li { margin-bottom: 0.04in; }
   .mini-quiz strong { font-weight: 800; }
-  .answer-line { border-bottom: 0.8px solid #444; height: 0.065in; margin-top: 0.008in; }
-  .question-guidance { font-size: 6.05pt; margin-top: 0.008in; }
+  .answer-line { border-bottom: 0.8px solid #444; height: 0.25in; margin-top: 0.035in; }
+  .question-guidance { font-size: 8.2pt; margin-top: 0.008in; }
 }
 
 @media (max-width: 900px) {
@@ -330,6 +346,10 @@ body.board-mode .card .label { font-size: 1rem; }
     </div>
     <button class="btn-red" onclick="resetApp()">Reset</button>
     <button class="btn-purple" onclick="renderPrintPack()">Print 5 Quiz Pages</button>
+  </div>
+
+  <div class="instructions">
+    <strong>AB/BC</strong> switches the card pool. <strong>Reset</strong> returns to a Unit 0 quiz. <strong>Print 5 Quiz Pages</strong> makes printable cut-out quizzes. <strong>Quick Quiz</strong> picks 5 questions from the units you type, like <code>0</code>, <code>0-4</code>, or <code>1,3,5</code>. <strong>Study This Unit</strong> shows every card from one unit.
   </div>
 
   <div class="top-controls quick-quiz">
@@ -420,12 +440,8 @@ const decks = {
         "a": "\\(x^2+bx=x(x+b)\\)."
       },
       {
-        "q": "What is slope between two points, and how is it the same as AROC?",
-        "a": "\\(m=\\frac{y_2-y_1}{x_2-x_1}\\). For a function \\(f\\), \\(\\text{AROC}=\\frac{f(b)-f(a)}{b-a}\\). These are the same idea."
-      },
-      {
-        "q": "What is average rate of change, and how is it the same as slope?",
-        "a": "\\(\\text{AROC}=\\frac{f(b)-f(a)}{b-a}\\). This is the slope formula \\(m=\\frac{y_2-y_1}{x_2-x_1}\\) applied to \\(f\\)."
+        "q": "What are the formulas for slope between two points and average rate of change?",
+        "a": "Slope: \(m=rac{y_2-y_1}{x_2-x_1}\). Average rate of change: \(	ext{AROC}=rac{f(b)-f(a)}{b-a}\)."
       },
       {
         "q": "Slope-intercept form of a line",
@@ -452,12 +468,24 @@ const decks = {
         "a": "Cylinder: \\(V=\\pi r^2h\\). Cone: \\(V=\\frac13\\pi r^2h\\). Sphere: \\(V=\\frac43\\pi r^3\\). Cube: \\(V=s^3\\)."
       },
       {
-        "q": "State the log rules.",
-        "a": "\\(\\ln(xy)=\\ln x+\\ln y\\), \\(\\ln\\frac{x}{y}=\\ln x-\\ln y\\), and \\(\\ln(x^n)=n\\ln x\\)."
+        "q": "Rewrite using log properties: \\(\\ln x+\\ln y\\) and \\(\\ln x-\\ln y\\).",
+        "a": "\\(\\ln x+\\ln y=\\ln(xy)\\) and \\(\\ln x-\\ln y=\\ln\\left(\\frac{x}{y}\\right)\\)."
       },
       {
-        "q": "State any 3 of the 6 exponent rules.",
-        "a": "\\(a^ma^n=a^{m+n}\\), \\(\\frac{a^m}{a^n}=a^{m-n}\\), \\(a^{-n}=\\frac1{a^n}\\), \\(a^{1/n}=\\sqrt[n]{a}\\), \\((a^m)^n=a^{mn}\\), and \\(a^0=1\\)."
+        "q": "Rewrite using the log power property: \\(n\\ln x\\).",
+        "a": "\\(n\\ln x=\\ln(x^n)\\)."
+      },
+      {
+        "q": "Rewrite using exponent properties: \\(a^m a^n\\) and \\(\\frac{a^m}{a^n}\\).",
+        "a": "\\(a^m a^n=a^{m+n}\\) and \\(\\frac{a^m}{a^n}=a^{m-n}\\)."
+      },
+      {
+        "q": "Rewrite using exponent properties: \\(a^{-n}\\) and \\(a^0\\).",
+        "a": "\\(a^{-n}=\\frac{1}{a^n}\\) and \\(a^0=1\\)."
+      },
+      {
+        "q": "Rewrite using exponent properties: \\(a^{1/n}\\) and \\((a^m)^n\\).",
+        "a": "\\(a^{1/n}=\\sqrt[n]{a}\\) and \\((a^m)^n=a^{mn}\\)."
       },
       {
         "q": "For a function \\(f\\), what do increasing, decreasing, concave up, and concave down mean graphically? (4 answers)",
@@ -1192,8 +1220,8 @@ function guidedPrompt(q) {
   else if (/horizontal asymptote degree cases/.test(q)) hint = "Give all 3 cases.";
   else if (/basic area formulas/.test(q)) hint = "Give triangle, rectangle, trapezoid, and circle formulas.";
   else if (/basic volume formulas/.test(q)) hint = "Give cylinder, cone, sphere, and cube formulas.";
-  else if (/log rules/.test(q)) hint = "Give product, quotient, and power rules.";
-  else if (/any 3 of the 6 exponent rules/.test(q)) hint = "Any 3 correct rules earn credit.";
+  else if (/Rewrite using log properties/.test(q)) hint = "Use product and quotient properties.";
+  else if (/Rewrite using exponent properties/.test(q)) hint = "Rewrite both expressions.";
   else if (/4 answers/.test(q)) hint = "Give all 4 answers.";
   else if (/What are the three conditions/.test(q)) hint = "3 total conditions.";
   else if (/State the Intermediate Value Theorem/.test(q)) hint = "Include conditions and conclusion.";
@@ -1230,14 +1258,13 @@ function renderPrintPack() {
   const printArea = document.getElementById("printArea");
   printArea.innerHTML = "";
   const pages = 5;
-  const quizzesPerPage = 6;
+  const quizzesPerPage = 4;
   for (let p = 1; p <= pages; p++) {
     let pageHTML = `<div class="print-page">`;
     for (let qz = 1; qz <= quizzesPerPage; qz++) {
       const selections = getPrintableSelections();
-      const unitsCovered = unitsCoveredText(selections);
       pageHTML += `<section class="mini-quiz">
-        <h2><span class="quiz-title"><span>You Gotta Know Quiz</span><span class="units-covered">Units Covered: ${unitsCovered}</span></span></h2>
+        <h2><span class="quiz-title"><span>You Gotta Know Quiz</span></span></h2>
         <div class="name-line"><span>Name: ____________________</span><span>Score: _____ / 5</span></div>
         <ol>`;
       selections.forEach(item => {
