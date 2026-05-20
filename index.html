@@ -1212,8 +1212,7 @@ function renderCards(selections) {
 
 function guidedPrompt(q) {
   let hint = "";
-  if (/Key trig values at/.test(q)) hint = "Write \(\sin\), \(\cos\), and \(\tan\).";
-  else if (/reciprocal trig functions/.test(q)) hint = "Give all 3 reciprocal relationships.";
+  if (/reciprocal trig functions/.test(q)) hint = "Give all 3 reciprocal relationships.";
   else if (/coordinates\/ratio/.test(q)) hint = "Give \(\sin\), \(\cos\), and \(\tan\).";
   else if (q.includes("Evaluate \(e^0")) hint = "4 total answers.";
   else if (q.includes("Evaluate \(4^{3/2}")) hint = "2 total answers.";
