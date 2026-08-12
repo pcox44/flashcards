@@ -832,8 +832,8 @@ const decks = {
     "cls": "unit7",
     "cards": [
       {
-        "q": "How do you separate variables for \\(\\frac{dy}{dx}=g(x)h(y)\\)?",
-        "a": "\\(\\frac{1}{h(y)}\\,dy=g(x)\\,dx\\), then integrate both sides.",
+        "q": " Separate variables for \\(\\frac{dy}{dx}=g(x)h(y)\\)?",
+        "a": "\\(\\frac{1}{h(y)}\\,dy=g(x)\\,dx\\)",
       },
       {
         "q": "After integrating a separable differential equation, what should you do?",
@@ -848,8 +848,8 @@ const decks = {
         "a": "\\(y=Ce^{kt}\\).",
       },
       {
-        "q": "State Euler's Method update formula.",
-        "a": "\\(y_{n+1}=y_n+\\frac{dy}{dx}\\Delta x\\).",
+        "q": "State Euler's Method.",
+        "a": "\\(y_{n+1}=y_n+\\frac{dy}{dx}\\Delta x\\) or new y = old y + slope * step.",
         "bcOnly": true,
       },
       {
@@ -859,7 +859,7 @@ const decks = {
       },
       {
         "q": "When is logistic growth fastest?",
-        "a": "At \\(P=\\frac{L}{2}\\).",
+        "a": "At \\(P=\\frac{L}{2}\\) or half the carrying capacity.",
         "bcOnly": true,
       }
     ]
@@ -976,14 +976,6 @@ const decks = {
         "a": "If \\(a_n=f(n)\\), where \\(f\\) is positive, continuous, and decreasing, then \\(\\sum a_n\\) and \\(\\int_1^\\infty f(x)\\,dx\\) behave the same.",
       },
       {
-        "q": "State the two useful comparison directions.",
-        "a": "If \\(0\\le a_n\\le b_n\\): \\(\\sum b_n\\) convergent implies \\(\\sum a_n\\) convergent; \\(\\sum a_n\\) divergent implies \\(\\sum b_n\\) divergent.",
-      },
-      {
-        "q": "State the condition that makes two positive series behave the same.",
-        "a": "If \\(\\lim\\frac{a_n}{b_n}=L\\) and \\(0<L<\\infty\\), then both series have the same behavior.",
-      },
-      {
         "q": "State the Ratio Test outcomes.",
         "a": "\\(L=\\lim\\left|\\frac{a_{n+1}}{a_n}\\right|\\). If \\(L<1\\), converges; if \\(L>1\\), diverges.",
       },
@@ -1013,8 +1005,8 @@ const decks = {
       },
       {
         "q": "Describe how to find radius and interval of convergence.",
-        "a": "Use Ratio Test for \\(|x-c|<R\\). Then check endpoints separately for IOC.",
-      },
+        "a": "Use Ratio Test for |x-c|<R. Then check endpoints separately for IOC."
+      }
       {
         "q": "Differentiate \\(\\sum a_n(x-c)^n\\) term-by-term.",
         "a": "\\(\\frac{d}{dx}\\sum a_n(x-c)^n=\\sum n a_n(x-c)^{n-1}\\). Radius stays same; endpoints may change.",
@@ -1065,7 +1057,7 @@ const decks = {
       },
       {
         "q": "How do you find the series for \\(\\sin(x^2)\\)?",
-        "a": "Substitute \\(x^2\\) into the \\(\\sin x\\) series: \\(\\sin(x^2)=x^2-\\frac{x^6}{3!}+\\frac{x^{10}}{5!}-\\cdots\\).",
+        "a": "Substitute \\(x^2\\) for x into the \\(\\sin x\\) series: \\(\\sin(x^2)=x^2-\\frac{x^6}{3!}+\\frac{x^{10}}{5!}-\\cdots\\).",
       }
     ]
   }
